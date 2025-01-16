@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить фильм</title>
+</head>
+<body>
+    <h1>Добавить новый фильм</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label>Название фильма:</label><br>
+            {{ form.title }}
+        </p>
+        <p>
+            <label>Описание фильма:</label><br>
+            {{ form.description }}
+        </p>
+        <p>
+            <label>Отзыв:</label><br>
+            {{ form.review }}
+        </p>
+        <button type="submit">Добавить фильм</button>
+    </form>
+    <p><a href="{% url 'movie_list' %}">Посмотреть все фильмы</a></p>
+</body>
+</html>
